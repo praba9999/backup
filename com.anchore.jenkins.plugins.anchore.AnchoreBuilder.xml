@@ -1,0 +1,15 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<com.anchore.jenkins.plugins.anchore.AnchoreBuilder_-DescriptorImpl plugin="anchore-container-scanner@1.0.19">
+  <debug>false</debug>
+  <enginemode>anchoreengine</enginemode>
+  <engineurl>http://localhost:8228/v1</engineurl>
+  <engineuser>admin</engineuser>
+  <enginepass>{AQAAABAAAAAQq7W8hAqitM9cRMjFS028QtI86Ep8tZL0jHkthq/aHRw=}</enginepass>
+  <engineverify>false</engineverify>
+  <containerImageId>anchore/jenkins:latest</containerImageId>
+  <containerId>jenkins_anchore</containerId>
+  <localVol></localVol>
+  <modulesVol></modulesVol>
+  <useSudo>false</useSudo>
+  <enabled>false</enabled>
+</com.anchore.jenkins.plugins.anchore.AnchoreBuilder_-DescriptorImpl>

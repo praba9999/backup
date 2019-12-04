@@ -1,0 +1,66 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@3.12.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/praba9999/latest-test-anchor.git</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/master</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.Shell>
+      <command>#TAG=$(date &quot;+%H%M%S%d%m%Y&quot;)
+#IMAGENAME=praba9999/latest-test-anchor
+#docker build -t $IMAGENAME:$TAG .
+#docker login docker.io/praba9999 -u praba9999 -p Lakshmi@123
+#docker push $IMAGENAME:$TAG
+ 
+# Line added to create anchore_images file
+echo &quot;docker.io/praba9999/client ${WORKSPACE}/Dockerfile &quot; &gt; anchore_images</command>
+    </hudson.tasks.Shell>
+    <com.anchore.jenkins.plugins.anchore.AnchoreBuilder plugin="anchore-container-scanner@1.0.19">
+      <name>anchore_images</name>
+      <policyName>anchore_policy</policyName>
+      <globalWhiteList>anchore_global_whitelist</globalWhiteList>
+      <anchoreioUser></anchoreioUser>
+      <anchoreioPass></anchoreioPass>
+      <userScripts>anchore_user_scripts</userScripts>
+      <engineRetries>300</engineRetries>
+      <bailOnFail>false</bailOnFail>
+      <bailOnWarn>false</bailOnWarn>
+      <bailOnPluginFail>false</bailOnPluginFail>
+      <doCleanup>false</doCleanup>
+      <useCachedBundle>true</useCachedBundle>
+      <policyEvalMethod>plainfile</policyEvalMethod>
+      <bundleFileOverride>anchore_policy_bundle.json</bundleFileOverride>
+      <policyBundleId></policyBundleId>
+      <autoSubscribeTagUpdates>true</autoSubscribeTagUpdates>
+      <forceAnalyze>false</forceAnalyze>
+      <engineurl></engineurl>
+      <engineCredentialsId></engineCredentialsId>
+      <engineverify>false</engineverify>
+      <isEngineverifyOverrride>true</isEngineverifyOverrride>
+    </com.anchore.jenkins.plugins.anchore.AnchoreBuilder>
+  </builders>
+  <publishers/>
+  <buildWrappers/>
+</project>
