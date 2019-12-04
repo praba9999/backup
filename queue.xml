@@ -1,25 +1,5 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson.model.Queue_-State>
-  <counter>26</counter>
-  <items>
-    <hudson.model.Queue_-WaitingItem>
-      <actions>
-        <hudson.model.CauseAction>
-          <causeBag class="linked-hash-map">
-            <entry>
-              <hudson.triggers.TimerTrigger_-TimerTriggerCause/>
-              <int>1</int>
-            </entry>
-          </causeBag>
-        </hudson.model.CauseAction>
-      </actions>
-      <id>26</id>
-      <task class="hudson.model.FreeStyleProject">jenkins-backup</task>
-      <inQueueSince>1575445680929</inQueueSince>
-      <timestamp>
-        <time>1575445680929</time>
-        <timezone>Asia/Kolkata</timezone>
-      </timestamp>
-    </hudson.model.Queue_-WaitingItem>
-  </items>
+  <counter>27</counter>
+  <items/>
 </hudson.model.Queue_-State>
