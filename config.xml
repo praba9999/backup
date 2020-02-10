@@ -1,7 +1,9 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <hudson>
-  <disabledAdministrativeMonitors/>
-  <version>2.207</version>
+  <disabledAdministrativeMonitors>
+    <string>OldData</string>
+  </disabledAdministrativeMonitors>
+  <version>2.219</version>
   <installStateName>RUNNING</installStateName>
   <numExecutors>2</numExecutors>
   <mode>NORMAL</mode>
